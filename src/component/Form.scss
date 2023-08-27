@@ -1,0 +1,132 @@
+$color_1: #49536a;
+$color_2: white;
+$color_3: #3f4e75;
+$color_4: gray;
+$color_5: #7289c4;
+$font-family_1: serif;
+$font-family_2: sans-serif;
+$background-color_1: rgb(205, 218, 237);
+$background-color_2: #f2f3f8;
+$background-color_3: #b7c4d835;
+
+* {
+	font-family: $font-family_1;
+}
+.title {
+	color: $color_1;
+	font-size: 36px;
+	font-weight: 600;
+	margin-top: 30px;
+}
+.subtitle {
+	color: $color_2;
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+.button-32 {
+	background-color: $background-color_1;
+	border-radius: 12px;
+	color: $color_1;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 10px 15px;
+	text-align: center;
+	transition: 200ms;
+	width: 100%;
+	box-sizing: border-box;
+	border: 0;
+	font-size: 16px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	margin-top: 30px;
+	z-index: 3;
+	&:not(:disabled) {
+		&:hover {
+			outline: 0;
+			background: #f3f3f0;
+			box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+		}
+		&:focus {
+			outline: 0;
+			background: #f3f3f0;
+			box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+		}
+	}
+	&:disabled {
+		filter: saturate(0.2) opacity(0.5);
+		-webkit-filter: saturate(0.2) opacity(0.5);
+		cursor: not-allowed;
+	}
+}
+.input-container {
+	height: 50px;
+	position: relative;
+	width: 100%;
+}
+.ic1 {
+	margin-top: 40px;
+}
+.ic2 {
+	margin-top: 30px;
+}
+.input {
+	background-color: $background-color_2;
+	border-radius: 12px;
+	border: 0;
+	box-sizing: border-box;
+	color: $color_3;
+	font-size: 18px;
+	height: 100%;
+	outline: 0;
+	padding: 4px 20px 0;
+	width: 100%;
+	&:focus {
+		~ {
+			.cut {
+				transform: translateY(8px);
+			}
+			.placeholder {
+				transform: translateY(-30px) translateX(10px) scale(0.75);
+				color: $color_5;
+			}
+		}
+	}
+	&:not(:placeholder-shown) {
+		~ {
+			.cut {
+				transform: translateY(8px);
+			}
+			.placeholder {
+				transform: translateY(-30px) translateX(10px) scale(0.75);
+				color: $color_1;
+			}
+		}
+	}
+}
+.cut {
+	background-color: $background-color_3;
+	border-radius: 10px;
+	height: 20px;
+	left: 20px;
+	position: absolute;
+	top: -20px;
+	transform: translateY(0);
+	transition: transform 200ms;
+	width: 76px;
+}
+.cut-short {
+	width: 50px;
+}
+.placeholder {
+	color: $color_4;
+	font-family: $font-family_2;
+	left: 20px;
+	line-height: 14px;
+	pointer-events: none;
+	position: absolute;
+	transform-origin: 0 50%;
+	transition: transform 200ms, color 200ms;
+	top: 20px;
+}
