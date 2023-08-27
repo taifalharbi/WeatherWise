@@ -1,4 +1,4 @@
-# a dynamic React project that fetches weather information from an API based on user input. The user provides a city and country, and the application uses the OpenWeatherMap API to retrieve weather data. 
+ a dynamic React project that fetches weather information from an API based on user input. The user provides a city and country, and the application uses the OpenWeatherMap API to retrieve weather data. 
 
 # Getting Started with Create React App
 
